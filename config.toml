@@ -75,7 +75,7 @@ theme = 'hugo-theme-shell'
 
   folderName = "about_me"
   files = [
-    ["Who am I?", "content/posts/introduction.md"],
+    ["Who am I?", "posts/introduction.md"],
     ["Work", ""],
     ["Blogs", ""],
     ["Equipment", ""],
