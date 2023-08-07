@@ -1,82 +1,67 @@
-baseURL = 'https://skudlur.github.io/'
-languageCode = 'en-us'
-title = 'Suhas Kudlur Viswanath'
-theme = 'hugo-theme-shell'
+baseurl = "http://skudlur.github.io"
+title = "skudlur"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
 
-[Params]
-  # Note: This is for the meta description, which is different from the "description" displayed in the terminal.
-  description = "Suhas's Portfolio!"
-  [Params.Terminal]
-  # Note: color scheme
-  # Note: You can choose between
-  # Note: hugo-theme-shell original: ["shell-powershell", "shell-ubuntu", "shell-retro"]
-  # Note: or
-  # Note: gogh theme: https://mayccoll.github.io/Gogh/
-  scheme = "Gruvbox"
+paginate = 20
 
-  # Note: in terminal
-  # [userName]@[pcName]:~/$ cd [workDir]
-  # [userName]@[pcName]:~/[workDir]$ cat [profile]
-  #
-  # [description]
-  #
-  # Note: if you set Params.Tree > use = true
-  # [userName]@[pcName]:~/[workDir]$ tree ./[folderName]/
-  # ./[folderName]/
-  # ...
-  # Note: result of the tree command
-  userName = "skudlur"
-  pcName = "zer0"
-  workDir = "life"
-  profile = "me.txt"
+disqusShortname = "skudlur"
 
-  # Note: speed at which text is displayed on the terminal
-  # Note: if set to 0, typing animation will be disabled
-  # Note:
-  # Note: if you want to enable Mathjax, you need to set it to 0
-  # Note: and set "math: true" at front matter in your Markdown file
-  ps1Delay = 0 # prompt speed : [userName]@[pcName]:~/$ , [userName]@[pcName]:~/[workDir]$
-  stdoutDelay = 0 # stdout speed : [description] , files in Params.Tree
-  commandDelay = 50 # command speed : cd [workDir] , cat [profile] , tree ./[folderName]/
+[markup.highlight]
+style = "github-dark"
 
-  # terminalDelay = 20 : deprecated
+[params]
+  author = "Suhas Kudlur Viswanath"
+  info = "Avid Computer Architecture Enthusiast"
+  description = "skudlur's personal website"
+  keywords = "personal"
+  avatarurl = "images/avatar.jpg"
 
-  # Note: speed at which text is displayed on the activity pages
-  # Note: if set to 0, typing animation will be disabled
-  # Note: 
-  # Note: if you want to enable Mathjax, you need to set it to 0
-  # Note: and set "math: true" at front matter in your Markdown file
-  titleDelay = 0 # title speed : "title" in front matter
-  contentDelay = 0 # content speed : content in .md file
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
 
-  # activityDelay = 5 : deprecated
+  since = 2023
 
-  description = """
-  Hi I am Suhas Kudlur Viswanath!
-  Nice to meet you!
-  
-  """
+  enableTwemoji = true
 
-  # Note: If you want to use a Markdown file, you can use the following
-  # description = "/description.md"
-  # Note: and put the description.md in /content/description.md
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
 
-  [Params.Tree]
-  use = true
-#  folderName = "cool_stuff"
-  # Note: ["ACTIVITY", "URL or PATH TO YOUR MARKDOWN FILE"]
-#  files = [ 
-#    ["diablo", "https://github.com/skudlur/diablo"],
-#    ["cayde", "https://github.com/skudlur/cayde"],
-#    ["RISCulator", "https://github.com/skudlur/RISCulator"],
-#    ["CFT", "https://github.com/skudlur/CFT"],
-#    ["rusty-riscy", "https://github.com/skudlur/rusty-riscy"],
-#  ]
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
 
-  folderName = "about_me"
-  files = [
-    ["Who am I?", "posts/introduction.md"],
-    ["Work", ""],
-    ["Blogs", ""],
-    ["Equipment", ""],
-  ]
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/skudlur/"
+[[params.social]]
+  name = "Gitlab"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 2
+  url = "https://www.linkedin.com/in/suhas-kudlur-viswanath-33aa971ba/"
+[[params.social]]
+  name = "Twitter"
+  icon = "fa fa-twitter fa-2x"
+  weight = 3
+  url = "https://twitter.com/s_kudlur/"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
