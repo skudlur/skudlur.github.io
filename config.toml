@@ -53,6 +53,11 @@ style = "github-dark"
   icon = "fa fa-twitter fa-2x"
   weight = 3
   url = "https://twitter.com/s_kudlur/"
+[[params.social]]
+  name = "Resume"
+  icon = "fa fa-file-text-o fa-2x"
+  weight = 4
+  url = "https://drive.google.com/file/d/1Zb_1K7RqgsaK-3tHoAfybGRpBnkpNLCV/view?usp=sharing"
 
 # Menu links
 [[menu.main]]
