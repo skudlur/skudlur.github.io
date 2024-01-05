@@ -15,6 +15,7 @@ There began my obsession with VST plugins and DAWs. It slowly crept on to becomi
 - Letshouer S12 (Planar driver IEM)
 - Tangzu Wa'ner (Dynamic driver IEM)
 - Moondrop Chu (Dynamic driver IEM)
+- Moondrop Quarks (Dynamic driver IEM)
 
 ### DACs
 - Venture Electronics Avani
