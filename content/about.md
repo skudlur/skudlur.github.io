@@ -7,7 +7,8 @@ draft: false
 ## Hello there! My name is Suhas Kudlur Viswanath
 
 - A senior-year undergraduate student from PES University, Bangalore.
-- An avid computer architecture and tech geek.
+- A computer architecture geek.
+- An amateur runner.
 - Also, an avid spender on audio peripherals.
 
 ### Research Interests:
