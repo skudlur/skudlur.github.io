@@ -10,12 +10,12 @@ I miss the days I used to run back in middle school for the spectrum of sports I
 It was time to get back to fitness and although I did not play a sport to be conditioned for, I thought why don't I run and try to become better at it. That set off the ball in Decemeber of 2023 and I look forward to how things go in 2024.
 
 ### My goals for 2024:
-- Run a sub-30 minute 5K.
-- Run a 10K.
+- ~Run a sub-30 minute 5K.~
+- ~Run a 10K.~
 - Run a 21K (HM).
 - Run a total of 1000KM in 2024.
 
 ### My gear for 2024
 - ASICS Gel-Nimbus 25
-- ASICS Gel-Contend 4B+
-- Crocs (Sports Mode)
+- Adidas Adizero SL
+- HOKA Carbon X3
