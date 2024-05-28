@@ -6,6 +6,7 @@ draft: false
 ---
 ## Hello there! My name is Suhas Kudlur Viswanath
 
+- Hardware Engineer @ [Arithmic](https:://arithmic.com/) (Since May 2024)
 - A senior-year undergraduate student from PES University, Bangalore.
 - A computer architecture geek.
 - An amateur runner.
