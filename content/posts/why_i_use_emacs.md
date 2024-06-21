@@ -34,7 +34,7 @@ Here are some of the things I do from emacs:
 
 ## How I plan to use emacs in the coming years?
 
-I will use emacs for latex and org documentation during my graduate program as I am quite comfortable at using it now. If you like Obsidian, I am sure you will love org-mode even more (but that is given, you have learned to use emacs). I would like to explore the feature of using emacs as a standalone window manager (proper neckbeard stuff right here).
+I will use emacs for latex and org documentation during my graduate program as I am quite comfortable using it now. If you like Obsidian, I am sure you will love org-mode even more (but that is given, you have learned to use emacs). I would like to explore the feature of using emacs as a standalone window manager (proper neckbeard stuff right here).
 
 ## Should you use emacs?
 
