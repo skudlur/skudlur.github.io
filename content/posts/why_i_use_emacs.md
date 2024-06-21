@@ -3,13 +3,13 @@ title: "Why do I choose to use emacs?"
 date: 2024-06-21T11:00:00+05:30
 draft: false
 ---
-## emacs
+## My emacs Journey
 
 I started using emacs on a whim(pun intended hehe). I was using neovim during all my internships and I wanted to experience what emacs had to offer. I remember sending a text on the HSP Mentor chat saying, _"I think I will use emacs during the upcoming internship"_ and I was promptly challenged (and made fun off, a tad bit). There began the journey of using (imho) one of the best tools (not just a text editor).
 
 ## How did I get started?
 
-As you can imagine, coming from vim where all the key bindings are pretty easy and straightforward, emacs posed the challenge of learning the awkward keybindings. I tried to use the man page and the GNU emacs tutorial but it only go me so far. This [playlist](https://youtube.com/playlist?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&feature=shared) from **System Crafters** made the onboarding to emacs a bit simpler.
+As you can imagine, coming from vim where all the keybindings are pretty easy and straightforward, emacs posed the challenge of learning the awkward keybindings. I tried to use the man page and the GNU emacs tutorial but it only go me so far. This [playlist](https://youtube.com/playlist?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&feature=shared) from **System Crafters** made the onboarding to emacs a bit simpler.
 
 ### Okay so, emacs is tough to get started with. What can I do to learn it faster?
 
@@ -38,6 +38,6 @@ I will use emacs for latex and org documentation during my graduate program as I
 
 ## Should you use emacs?
 
-The answer is not that simple as it depends on a few things. Do you like your text editor to be fast? Use Neovim. Do you not like customizing your text editor or having key binds? Use VSC or Espressor or Sublime Text. I would suggest emacs to users that like to do a lot of things in one place. Vim can do a lot of things emacs can do, but emacs lets you do almost everything you can do on your computer WM or DE. The level of customization and control you get over this tool is immense and if you seek such features, you would benefit from emacs.
+The answer is not that simple as it depends on a few things. Do you like your text editor to be fast? Use Neovim. Do you not like customizing your text editor or having keybinds? Use VSC or Espresso or Sublime Text. I would suggest emacs to users that like to do a lot of things in one place. Vim can do a lot of things emacs can do, but emacs lets you do almost everything you can do on your computer WM or DE. The level of customization and control you get over this tool is immense and if you seek such features, you would benefit from emacs.
 
 Ending this meh blog with a quote from Tom Christiansen (Chad Perl user) - _"Emacs is a nice operating system, but I prefer UNIX"_. That should tell you a lot about what emacs actually is.
