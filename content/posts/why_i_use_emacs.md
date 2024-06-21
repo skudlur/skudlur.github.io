@@ -11,7 +11,7 @@ I started using emacs on a whim(pun intended hehe). I was using neovim during al
 
 As you can imagine, coming from vim where all the keybindings are pretty easy and straightforward, emacs posed the challenge of learning the awkward keybindings. I tried to use the man page and the GNU emacs tutorial but it only go me so far. This [playlist](https://youtube.com/playlist?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&feature=shared) from **System Crafters** made the onboarding to emacs a bit simpler.
 
-### Okay so, emacs is tough to get started with. What can I do to learn it faster?
+### Okay so, emacs is tough to get started with. What can you do to learn it faster?
 
 In the process of figuring out emacs, there are things I wish I learned during this process to make using and customizing emacs a lot better. Here are the following:
 
