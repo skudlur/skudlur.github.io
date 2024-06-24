@@ -7,9 +7,7 @@ draft: false
 
 An FPGA (Field Programmable Gate Array) is a device that consists of logic elements (Look-Up Tables i.e. LUTs. Sometimes the logic elements are also referred to as Configurable Logic Block (CLB)), memory slices (i.e. BRAM) and DSP slices (Digital Signal Processor). The LUTs are all interconnected and they can be configured to behave like any logic gate. The BRAM and DSP slices are placed in-between these vastly interconnected LUTs. The "magic" of FPGA devices is that it can be configured to behave like any digital logic circuit.
 
-<p align="center">
-  <img src="https://miro.medium.com/v2/resize:fit:641/1*F13OAM64_71IFwhfYR7Emg.png" alt="Internal Organization of a typical FPGA fabric"/>
-</p>
+![alt text](https://miro.medium.com/v2/resize:fit:641/1*F13OAM64_71IFwhfYR7Emg.png "Internal Organization of a typical FPGA fabric")
 
 ### Let us say, we have to design a simple 2:1 multiplexer circuit
 
@@ -33,9 +31,7 @@ The typical FPGA has a set number of LUTs, BRAMs, DSPs and IOs. Although these a
 
 The source file is linted, compiled and then synthesized (i.e. mapped to the resources on the FPGA, in this case). The EDA tool performs various operations (floorplan, routing etc.) to ensure correct and efficient use of the FPGA resources.
 
-<p align="center">
-  <img src="https://i.sstatic.net/K0BCg.png" alt="Mux with basic gates"/>
-</p>
+![alt text](https://i.sstatic.net/K0BCg.png "Mux with basic gates")
 
 The above image is a mux inferred with logic gates. Now, like I mentioned before, the LUTs can be configured to behave like these gates. The EDA tool generates a binary file called the **bitstream** that is sent to the FPGA. This bitstream is essentially an image to be configured onto the resources on the FPGA.
 
@@ -65,9 +61,7 @@ What I am about to discuss up next is still mostly in theory and not yet in prac
 
 The Xilinx FPGAs we have now have tons of resources to use and even have multiple FPGA fabric regions called SLRs (Super Logic Regions). 
 
-<p align="center">
-  <img src="https://support.xilinx.com/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=0682E00000KVZGR&operationContext=CHATTER&contentId=05T2E00001HKRq0&page=0" alt="SLRs on FPGA"/>
-</p>
+![alt text](https://support.xilinx.com/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&versionId=0682E00000KVZGR&operationContext=CHATTER&contentId=05T2E00001HKRq0&page=0 "SLRs on Xilinx FPGAs")
 
 Now, imagine being able to use these SLRs to independently run individual workloads or even smaller parts of a larger workload. Since FPGAs are mainly used for acceleration due to it's inherent property of leveraging, what I would like to refer to as, [awkward parallelism](https://stackoverflow.com/questions/35325175/understanding-the-parallelism-of-fpgas). This idea to utilize the SLRs to perform different computations has not been widely explored and hence seems like a worthy topic to pick up if you are intrigued to develop something on this.
 
