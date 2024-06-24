@@ -31,7 +31,7 @@ The typical FPGA has a set number of LUTs, BRAMs, DSPs and IOs. Although these a
 
 The source file is linted, compiled and then synthesized (i.e. mapped to the resources on the FPGA, in this case). The EDA tool performs various operations (floorplan, routing etc.) to ensure correct and efficient use of the FPGA resources.
 
-![alt text](https://i.sstatic.net/YGkYh.png "Mux with gates")
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyode_o_T1jhdOKbtk5vXoxxe6u_luZzGTmg&usqp=CAU "Mux with gates")
 
 The above image is a mux inferred with logic gates. Now, like I mentioned before, the LUTs can be configured to behave like these gates. The EDA tool generates a binary file called the **bitstream** that is sent to the FPGA. This bitstream is essentially an image to be configured onto the resources on the FPGA.
 
