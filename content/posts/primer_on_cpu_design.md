@@ -43,3 +43,26 @@ An instruction is a set of binary numbers of size in the powers of 2. Why powers
 
 The premise that a computer understands instructions that are in binary is now set, but what does it "process". The computer needs to decode this instruction to understand what logical or arithmetic operation to perform on what bit of data. The fields mentioned in the last line all help with deducing what operations are done on which data. Hence, leading to computation i.e. processing!
 
+## The parts of the CPU
+
+The CPU may be the heart of the computer but what is the heart made of? In this instance, the heart consists of a few micro-architectural components that is common between all the CPU instruction-set architectures (i.e. ARM, RISC-V, x86 etc.) Those components are as following:
+1. A module to decode the instructions.
+2. An arithmetic and logical unit to perform said operations. (Example: Addition, multiplication).
+3. A set of registers called the register file.
+
+Now these components (along with the others) can be placed in any way as long as the CPU can operate as intended or dictated by the ISA (instruction-set architecture). A basic CPU must have these components to perform computation on data.
+
+To learn more about ISAs -> [Go here](https://en.wikipedia.org/wiki/Instruction_set_architecture)
+
+## What it takes to design a CPU?
+
+We are getting to the crux of today's blog, and that is how can you get started with designing your own CPU. You can follow the steps listed up next to do so:
+1. Choose an instruction-set architecture. If you can afford to spend millions on getting a license - go for ARM or x86. If you are brokie like me and open-source is your bestie - go for [RISC-V](https://github.com/riscv/riscv-isa-manual).
+2. Read the specification for the ISA. This spec sheet is your bread-and-butter to understand how a CPU must be built. This spec acts as the prescription to your building process. It contains crucial information about things like instruction formats, register names, memory space limits etc.
+3. Choose a hardware-description language of your choice. Learn more about them [here](https://en.wikipedia.org/wiki/Hardware_description_language#HDLs_for_digital_circuit_design)
+4. Start with the simplest configuration of the CPU. In RISC-V, this is the RV32I type. This requires you to implement a CPU that understands only about 47 instructions.
+5. If you would like to synthesize your CPU onto an FPGA, stay tuned for an upcoming blog post about that. I will highlight about simulation of the CPU core too.
+
+## Things to know before you start
+
+Building a CPU (even the simple configurations) is not a simple task. You need to understand the specification thoroughly and ensure your HDL skills are good enough to infer the hardware required. Take it slow when building your core and refer (not copy) to other open-source cores to get an understanding. If you are interested in building your own CPU core, stay tuned for more of my blogs on the same topic but until then have a fun time learning and building your own computer processor! Please feel free to reach out to me if you have any questions or you would like to share your thoughts on the post.
