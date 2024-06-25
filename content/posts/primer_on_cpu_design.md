@@ -33,13 +33,13 @@ For example, let us say I am training my dog and he sits down every time I say "
 
 But, do you think a(n expensive) piece of silicon and metals understands English? Does a light pole understand English? Neither of these are true. (Calm down NLP lads) Our semiconductor chips only "understand" electrons. We don't understand electrons (none of us are Neil deGrasse Tyson). Here is where we need *abstraction*!
 
-The binary system consists of conveying data with the combination of just 0s and 1s. This representation can translate well to electricity in digital systems since we direct current. 1 would mean that the signal is high (3.3v/5v etc.) and 0 would mean that the signal is low (0v).
+The binary system comprises just 0s and 1s and using this we can convey information by representing numbers, alphabets in terms of combinations of 0s and 1s. This representation can translate well to electricity in digital systems since we direct current. 1 would mean that the signal is high (3.3v/5v etc.) and 0 would mean that the signal is low (0v).
 
 ![meme](https://i.pinimg.com/originals/8a/8b/13/8a8b133c722b8ac807e57de6cb410d85.png "meme")
 
 Now that we have established a common lingo that we can somewhat understand, let us try to understand what an instruction means in this context for a CPU.
 
-An instruction is a set of binary numbers of size in the powers of 2. Why powers of 2? We will get to that later. This instruction needs to be understood, there needs to be a format or a syntax to this "sentence" that I just said to the computer. The instruction's format comprises of fields like memory addresses, immediate values, opcodes, function values and offset values. I will explain what these mean going ahead.
+An instruction is a set of binary numbers of size in the powers of 2. Why powers of 2? We will discuss that in the upcoming posts. This instruction needs to be understood, there needs to be a format or a syntax to this "sentence" that I just said to the computer. The instruction's format comprises of fields like memory addresses, immediate values, opcodes, function values and offset values. I will explain what these mean in a later blog.
 
 The premise that a computer understands instructions that are in binary is now set, but what does it "process". The computer needs to decode this instruction to understand what logical or arithmetic operation to perform on what bit of data. The fields mentioned in the last line all help with deducing what operations are done on which data. Hence, leading to computation i.e. processing!
 
