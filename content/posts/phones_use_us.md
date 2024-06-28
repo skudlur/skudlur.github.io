@@ -1,6 +1,6 @@
 ---
 title: "Our phones use us"
-date: 2024-06-28T11:00:00+05:30
+date: 2024-06-28T12:00:00+05:30
 draft: false
 ---
 ## Our phones
