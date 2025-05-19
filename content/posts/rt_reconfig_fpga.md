@@ -2,6 +2,10 @@
 title: "A future where dynamic hardware becomes a thing"
 date: 2024-06-24T11:00:00+05:30
 draft: false
+tags:
+    - blog
+    - fpga
+    - info
 ---
 ## FPGAs
 

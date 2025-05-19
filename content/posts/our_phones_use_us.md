@@ -2,6 +2,9 @@
 title: "Our phones use us"
 date: 2024-06-28T12:00:00+05:30
 draft: false
+tags:
+  - observations
+  - misc
 ---
 ## Our phones
 At 22 years of age, I am not a very old person, or I think so to feel good. But, everyday I see how our phones have merged into our beings. Imagine someone wearing a suit, a nice Seiko watch, a grand leather briefcase and a shiny pair of Clarks asks to borrow your phone to make a call. That scenario is so unlikely that it will take a momemt or two to even realize that this dapper man, for some obscure reason, does not have a phone. Having a phone is like having a limb in this day and age. You see one without one, and you feel bad or sometimes even disgusted.

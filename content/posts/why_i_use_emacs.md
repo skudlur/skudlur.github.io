@@ -2,6 +2,10 @@
 title: "Why do I choose to use emacs?"
 date: 2024-06-21T11:00:00+05:30
 draft: false
+tags:
+  - blog
+  - emacs
+  - nerd
 ---
 ## My emacs Journey
 

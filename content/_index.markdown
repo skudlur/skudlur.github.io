@@ -10,5 +10,8 @@ title: Home
 
 ## _Living life, one bit at a time._
 
+I am a postgraduate (MSc by Research) student at the School of Informations, University of Edinburgh. I am intrigued by hardware and software architecture and how the development of these have evolved over the years and converged into the co-design realm for maximum performance. Besides my lab work, I strive to contribute to my own as well as other open source projects. I also guide undergraduate students interested in contributing to open source projects and research projects. 
+
+If you are interested to work with me, hire me or would like to share your playlist - reach out to me on LinkedIn.
 
 ### Recent Blogs

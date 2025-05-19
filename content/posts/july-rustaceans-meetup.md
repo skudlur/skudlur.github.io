@@ -2,6 +2,9 @@
 title: "My talk at July's Rustaceans Meetup"
 date: 2023-05-19T21:38:18+05:30
 draft: false
+tags:
+  - announcement
+  - blog
 ---
 ## I gave a talk titled "Building lightweight command-line tools with Rust"
 

@@ -2,6 +2,8 @@
 title: "My Running Journey"
 date: 2024-01-05T21:38:18+05:30
 draft: false
+tags:
+  - misc
 ---
 ## The start of my journey to become a runner (and a triathlete)
 

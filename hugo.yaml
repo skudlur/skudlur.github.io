@@ -19,16 +19,13 @@ menu:
     - name: About
       url: "about/"
       weight: 2
-    - name: Categories
-      url: "categories/"
-      weight: 3
     - name: Tags
       url: "tags/"
-      weight: 4
+      weight: 3
 
 params:
   description: "skudlur's personal website."
-  footer: "&copy; [Suhas Kudlur Viswanath](https://skudlur.github.io) 2020 -- {Year} | [Github](https://github.com/skudlur) | [Twitter](https://twitter.com/s_kudlur)"
+  footer: "&copy; [Suhas Kudlur Viswanath](https://skudlur.github.io) 2020 -- {Year} | [GitHub](https://github.com/skudlur) | [Twitter](https://twitter.com/s_kudlur) | [LinkedIn](https://www.linkedin.com/in/suhas-kudlur-viswanath-33aa971ba/)"
 
 markup:
   highlight:

@@ -2,6 +2,10 @@
 title: "A primer on CPU design"
 date: 2024-06-25T11:00:00+05:30
 draft: false
+tags:
+  - blog
+  - cpu
+  - info
 ---
 ## CPU - The heart of a computer
 
