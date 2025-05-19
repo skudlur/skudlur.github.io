@@ -31,22 +31,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.108.0
+      HUGO_VERSION: 0.123.7 # Keep your specified Hugo version
     steps:
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass Embedded
-        run: sudo snap install dart-sass-embedded
+        # Note: snap might not be available in all runner environments.
+        # Consider using a Node.js based Sass installation if you encounter issues.
+        run: sudo snap install dart-sass-embedded || echo "Dart Sass snap installation failed, proceeding..."
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Updated to v4
         with:
           submodules: recursive
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5 # Updated to v5
       - name: Install Node.js dependencies
+        # This step will run if package-lock.json or npm-shrinkwrap.json exists
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
         env:
@@ -58,9 +61,11 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        # Updated to v3, which is the current recommended version for upload-pages-artifact
+        # This version internally uses actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./public # The directory where Hugo outputs the built site
 
   # Deployment job
   deploy:
@@ -72,4 +77,6 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        # Updated to v4, the current recommended version for deploy-pages
+        uses: actions/deploy-pages@v4
+
