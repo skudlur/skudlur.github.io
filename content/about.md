@@ -1,13 +1,13 @@
 
 ---
 title: "About"
-date: 2023-05-19T21:11:06+05:30
 draft: false
 ---
 ## Hello there! My name is Suhas Kudlur Viswanath
 
-- Hardware Engineer @ [Arithmic](https:://arithmic.com/) (Since May 2024)
-- A senior-year undergraduate student from PES University, Bangalore.
+- A Master's By Research student at [The School of Informatics, University of Edinburgh](https://informatics.ed.ac.uk/).
+- Huawei Research Grant award winner.
+- Database Systems Research Intern at [Huawei Technologies R&D (UK) Ltd](https://www.linkedin.com/company/huawei-technologies-research-development-uk-ltd/?originalSubdomain=uk).
 - A computer architecture geek.
 - An amateur runner.
 - Also, an avid spender on audio peripherals.
@@ -16,15 +16,21 @@ draft: false
 
 - Computer Architecture
 - Electronic Design Automation
+- Hardware-Software Co-Design
+- Performance Modelling and Analysis
+- Novel Memory Technologies
 
-### Previous Research Experience:
+### Research Experience:
 
-- Research Intern at [CHIPS](https://www.chips.pes.edu/), PES
+- Research Intern at ICE Labs, Columbia University
+    - Worked with Dr. Tanvir Ahmed Khan on ways to utilize and optimize PIM devices as cxl.mem devices.
+- Research Intern at [CHIPS](https://www.chips.pes.edu/), PES University
     - Worked on Domain Optimized Manycore RISC-V Overlay project funded by the [Semiconductor Research Corporation](https://www.src.org/)
 - Edge AI Research Intern at [SandLogic](https://www.sandlogic.com/)
     - Worked on developing DNN accelerators on FPGA devices for better and efficient inference and training on edge devices.
 
-### Previous Work Experience:
+### Work Experience:
 
-- CPU Verification Intern (Summer 2022) at [InCore Semiconductor](https://incoresemi.com/)
+- Hardware Engineer (May 2024 - December 2024) at [Arithmic](https:://arithmic.com/)
 - SoC Intern (Summer 2023) at [InCore Semiconductor](https://incoresemi.com/)
+- CPU Verification Intern (Summer 2022) at [InCore Semiconductor](https://incoresemi.com/)

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A primer on CPU design | skudlur</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">A primer on CPU design</span></h1>
+
+<h2 class="date">2024/06/25</h2>
+</div>
+
+<main>
+<h2 id="cpu---the-heart-of-a-computer">CPU - The heart of a computer</h2>
+<p>The design of a central processing unit (CPU) involves building and testing various complex micro-architectural modules. We will discuss on what it takes for an enthusiastic beginner to get into the art of designing modern-day CPUs.</p>
+<h2 id="von-neumann-vs-harvard-architectures">Von-Neumann vs. Harvard Architectures</h2>
+<p>Every computer comprises of the same primitive structures i.e. compute and memory. Compute refers to the modules that perform logical, arithmetic and other similar operations on data. Memory refers to the space where we store the said data that requires to be processed by the compute.</p>
+<p>John Von-Neumann et al described their way of organizing the compute and memory in which the both instructions and data that requires processing share the same memory space and hence there cannot be a concurrent instruction fetch and data operation (i.e. read, write). This architecture is commonly known as the <strong>Von-Neumann Architecture</strong>.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Von_Neumann_Architecture.svg/2880px-Von_Neumann_Architecture.svg.png" alt="vn-arch" title="Von-Neumann Architecture"></p>
+<p>Harvard Mark had set up a relay-based computer which stored instructions on punched tapes and data in electro-mechanical counters. With contrast to the Von-Neumann Architecture, the instructions and the data memory spaces are split up and hence facilitating fetching instructions and performing reads and writes on data without concerns of hazards(wrong flow of memory operations leading to incorrect output). This architecture is commonly known as the <strong>Harvard Architecture</strong>.</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Harvard_architecture.svg/2880px-Harvard_architecture.svg.png" alt="hv-arch" title="Harvard Architecture"></p>
+<p>Now, these are two basic schools of thought to orgranize your compute and memory. Each have their own advantages and disadvantages and please do not disregard one because the other is &ldquo;better&rdquo;. Both these architectures can prove to be potent depending on your usecase for the CPU you design.</p>
+<p>You can read more about here - <a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">Von-Neumann Architecture</a> and <a href="https://en.wikipedia.org/wiki/Harvard_architecture">Harvard Architecture</a>.</p>
+<h2 id="defining-the-processing-in-central-processing-unit">Defining the Processing in Central Processing Unit</h2>
+<p>The word <em>&ldquo;processing&rdquo;</em> refers to <em>&ldquo;the act or process of treating or preparing something by a special method.&rdquo;</em> In this case of a CPU, we will do exactly that. The something in this case consist of instructions. These instructions, like the name suggests, are processes to be performed.</p>
+<p>For example, let us say I am training my dog and he sits down every time I say &ldquo;Sit!&rdquo;. The instruction is &ldquo;Sit!&rdquo; and the action is that he sits down. Similarly, we need to instruct our computer to perform certain tasks (i.e. computation).</p>
+<p><img src="https://qph.cf2.quoracdn.net/main-qimg-bfc7482b8026e5f687b615a0a617fa66-lq" alt="doggo" title="Dog obeying an instruction"></p>
+<p>But, do you think a(n expensive) piece of silicon and metals understands English? Does a light pole understand English? Neither of these are true. (Calm down NLP lads) Our semiconductor chips only &ldquo;understand&rdquo; electrons. We don&rsquo;t understand electrons (none of us are Neil deGrasse Tyson). Here is where we need <em>abstraction</em>!</p>
+<p>The binary system comprises just 0s and 1s and using this we can convey information by representing numbers, alphabets in terms of combinations of 0s and 1s. This representation can translate well to electricity in digital systems since we direct current. 1 would mean that the signal is high (3.3v/5v etc.) and 0 would mean that the signal is low (0v).</p>
+<p><img src="https://i.pinimg.com/originals/8a/8b/13/8a8b133c722b8ac807e57de6cb410d85.png" alt="meme" title="meme"></p>
+<p>Now that we have established a common lingo that we can somewhat understand, let us try to understand what an instruction means in this context for a CPU.</p>
+<p>An instruction is a set of binary numbers of size in the powers of 2. Why powers of 2? We will discuss that in the upcoming posts. This instruction needs to be understood, there needs to be a format or a syntax to this &ldquo;sentence&rdquo; that I just said to the computer. The instruction&rsquo;s format comprises of fields like memory addresses, immediate values, opcodes, function values and offset values. I will explain what these mean in a later blog.</p>
+<p>The premise that a computer understands instructions that are in binary is now set, but what does it &ldquo;process&rdquo;. The computer needs to decode this instruction to understand what logical or arithmetic operation to perform on what bit of data. The fields mentioned in the last line all help with deducing what operations are done on which data. Hence, leading to computation i.e. processing!</p>
+<h2 id="the-parts-of-the-cpu">The parts of the CPU</h2>
+<p>The CPU may be the heart of the computer but what is the heart made of? In this instance, the heart consists of a few micro-architectural components that is common between all the CPU instruction-set architectures (i.e. ARM, RISC-V, x86 etc.) Those components are as following:</p>
+<ol>
+<li>A module to decode the instructions.</li>
+<li>An arithmetic and logical unit to perform said operations. (Example: Addition, multiplication).</li>
+<li>A set of registers called the register file.</li>
+</ol>
+<p>Now these components (along with the others) can be placed in any way as long as the CPU can operate as intended or dictated by the ISA (instruction-set architecture). A basic CPU must have these components to perform computation on data.</p>
+<p>To learn more about ISAs -&gt; <a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">Go here</a></p>
+<h2 id="what-it-takes-to-design-a-cpu">What it takes to design a CPU?</h2>
+<p>We are getting to the crux of today&rsquo;s blog, and that is how can you get started with designing your own CPU. You can follow the steps listed up next to do so:</p>
+<ol>
+<li>Choose an instruction-set architecture. If you can afford to spend millions on getting a license - go for ARM or x86. If you are brokie like me and open-source is your bestie - go for <a href="https://github.com/riscv/riscv-isa-manual">RISC-V</a>.</li>
+<li>Read the specification for the ISA. This spec sheet is your bread-and-butter to understand how a CPU must be built. This spec acts as the prescription to your building process. It contains crucial information about things like instruction formats, register names, memory space limits etc.</li>
+<li>Choose a hardware-description language of your choice. Learn more about them <a href="https://en.wikipedia.org/wiki/Hardware_description_language#HDLs_for_digital_circuit_design">here</a></li>
+<li>Start with the simplest configuration of the CPU. In RISC-V, this is the RV32I type. This requires you to implement a CPU that understands only about 47 instructions.</li>
+<li>If you would like to synthesize your CPU onto an FPGA, stay tuned for an upcoming blog post about that. I will highlight about simulation of the CPU core too.</li>
+</ol>
+<h2 id="things-to-know-before-you-start">Things to know before you start</h2>
+<p>Building a CPU (even the simple configurations) is not a simple task. You need to understand the specification thoroughly and ensure your HDL skills are good enough to infer the hardware required. Take it slow when building your core and refer (not copy) to other open-source cores to get an understanding. If you are interested in building your own CPU core, stay tuned for more of my blogs on the same topic but until then have a fun time learning and building your own computer processor! Please feel free to reach out to me if you have any questions or you would like to share your thoughts on the post.</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://skudlur.github.io">Suhas Kudlur Viswanath</a> 2020 &ndash; 2025 | <a href="https://github.com/skudlur">Github</a> | <a href="https://twitter.com/s_kudlur">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

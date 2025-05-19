@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A future where dynamic hardware becomes a thing | skudlur</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">A future where dynamic hardware becomes a thing</span></h1>
+
+<h2 class="date">2024/06/24</h2>
+</div>
+
+<main>
+<h2 id="fpgas">FPGAs</h2>
+<p>An FPGA (Field Programmable Gate Array) is a device that consists of logic elements (Look-Up Tables i.e. LUTs. Sometimes the logic elements are also referred to as Configurable Logic Block (CLB)), memory slices (i.e. BRAM) and DSP slices (Digital Signal Processor). The LUTs are all interconnected and they can be configured to behave like any logic gate. The BRAM and DSP slices are placed in-between these vastly interconnected LUTs. The &ldquo;magic&rdquo; of FPGA devices is that it can be configured to behave like any digital logic circuit.</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:641/1*F13OAM64_71IFwhfYR7Emg.png" alt="alt text" title="Internal Organization of a typical FPGA fabric"></p>
+<h3 id="let-us-say-we-have-to-design-a-simple-21-multiplexer-circuit">Let us say, we have to design a simple 2:1 multiplexer circuit</h3>
+<p>A multiplexer is a switch in essence that is quite helpful in digital circuits to dictate the inputs to certain blocks. It operates the same way a relay switch does. A 2:1 multiplexer has three inputs and one output: two inputs which need to switched between, one input to select which input to switch to and one output that connects to the selected input.</p>
+<p>The SystemVerilog code for the 2:1 multiplexer looks like this:</p>
+<pre><code class="language-verilog">module mux21 (
+      input logic in0,    // Input 1
+      input logic in1,    // Input 2
+      input logic sel,    // Select line
+
+      output logic y,     // Output
+);
+      assign y = sel ? in1 : in0;    // Ternary operation -&gt; if sel is 1, y = in1 else y = in0
+endmodule // mux21
+</code></pre>
+<p>The typical FPGA has a set number of LUTs, BRAMs, DSPs and IOs. Although these are set, they are still too many to be configured by a human and hence require some heuristic algorithms to configure the hardware described in your source file (<code>mux21.sv</code> in this case). An EDA (Electronic Design Automation) tool comes to the rescue here and does all the tedious configuration and optimizations for us.</p>
+<p>The source file is linted, compiled and then synthesized (i.e. mapped to the resources on the FPGA, in this case). The EDA tool performs various operations (floorplan, routing etc.) to ensure correct and efficient use of the FPGA resources.</p>
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyode_o_T1jhdOKbtk5vXoxxe6u_luZzGTmg&amp;usqp=CAU" alt="alt text" title="Mux with gates"></p>
+<p>The above image is a mux inferred with logic gates. Now, like I mentioned before, the LUTs can be configured to behave like these gates. The EDA tool generates a binary file called the <strong>bitstream</strong> that is sent to the FPGA. This bitstream is essentially an image to be configured onto the resources on the FPGA.</p>
+<p>The configuration all depends on the circuit&rsquo;s truth table (to put it simply). Once the boolean equations of the circuit have been optimized by the tool, the LUTs are configured accordingly to behave like the circuit defined.</p>
+<p>Read more about LUTs <a href="https://electronics.stackexchange.com/questions/169532/what-is-an-lut-in-fpga">here</a></p>
+<h3 id="so-what-are-bram-and-dsp-slices">So, what are BRAM and DSP slices?</h3>
+<p>BRAM and DSP slices are special blocks embedded within the FPGA fabric. Let us get a brief understand about these blocks:</p>
+<ul>
+<li>
+<p><strong>Block RAM</strong> : A volatile memory element on-board the FPGA to help with storing data closer to the CLBs.</p>
+</li>
+<li>
+<p><strong>DSP block</strong> : A Digital Signal Processing block has fast adders, multipliers and other potentially parallelizable to perform DSP operations like FFTs (Fast-Fourier Transforms, Number Theoretic Tranforms etc.) If your design contains arithmetic blocks, the EDA tool will assign these operations to the DSP slices to both save on CLB/LUT real estate and improve performance.</p>
+</li>
+</ul>
+<h3 id="an-fpga-seems-like-the-perfect-device-for-developing-hardware-but-what-is-the-main-concern">An FPGA seems like the perfect device for developing hardware, but what is the main concern?</h3>
+<p>The main concern is the time it takes to configure an FPGA. Modern computation now happens at gigahertz speeds, but when configuring an FPGA, we have the EDA tool performing largely heuristic and hence non-constant time computation and then forwarding the bitstream to the FPGA. Not ideal if we want &ldquo;dynamic&rdquo; hardware.</p>
+<h3 id="what-do-i-mean-by-dynamic-hardware">What do I mean by dynamic hardware?</h3>
+<p>To set the premise, I am highlighting the possibility of having an FPGA that can reconfigure (itself) during runtime, hence making it &ldquo;dynamic&rdquo;. Having dynamic hardware can change the way we design systems. Imagine having an FPGA accelerating a workload like real-time ML inference and it is scheduled to perform another workload up next, and let&rsquo;s say it has the ability to reconfigure itself that would be the best way to reuse your compute and still get high throughput while keeping power consumption lower than GPUs.</p>
+<p>What I am about to discuss up next is still mostly in theory and not yet in practice so the majority of the next section can be taken as speculation and brainstorming.</p>
+<h3 id="runtime-reconfiguration-of-an-fpga-device">Runtime Reconfiguration of an FPGA device.</h3>
+<p>The Xilinx FPGAs we have now have tons of resources to use and even have multiple FPGA fabric regions called SLRs (Super Logic Regions).</p>
+<p><img src="https://support.xilinx.com/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB720BY480&amp;versionId=0682E00000KVZGR&amp;operationContext=CHATTER&amp;contentId=05T2E00001HKRq0&amp;page=0" alt="alt text" title="SLRs on Xilinx FPGAs"></p>
+<p>Now, imagine being able to use these SLRs to independently run individual workloads or even smaller parts of a larger workload. Since FPGAs are mainly used for acceleration due to it&rsquo;s inherent property of leveraging, what I would like to refer to as, <a href="https://stackoverflow.com/questions/35325175/understanding-the-parallelism-of-fpgas">awkward parallelism</a>. This idea to utilize the SLRs to perform different computations has not been widely explored and hence seems like a worthy topic to pick up if you are intrigued to develop something on this.</p>
+<p>Runtime reconfigurability however has been explored numerous times in the academic space. We need to know that FPGAs often come packaged with a soft-core or a simple CPU to perform some operations to aid the FPGA fabric and the possibility to use these CPUs to possibly dictate the reconfiguration was discussed in these <a href="https://indico.cern.ch/event/78644/attachments/1059010/1510107/dyn_reconf.handouts.pdf">findings</a>.</p>
+<p>Some advantages of runtime reconfigurability:</p>
+<ul>
+<li>Efficient usage of FPGA resources.</li>
+<li>The potential to have your hardware adapt to the workload demands.</li>
+<li>Power utilization is theoretically lower.</li>
+</ul>
+<p>We saw that the configuration of the FPGA takes a bit of time, but we did notice that the EDA tool outputs a bitstream file that holds the configuration for the FPGA fabric. This gives us an idea about how we can pretty much precompute these bitstreams and have them on the RAM of the FPGA device (not to be mistaken with the BRAM slices but an actual DRAM module with the CPU). Now that we have the bitstreams of different designs (let us say we have one design for ML inference and another to accelerate a genomic analysis workload), all we would need to figure out is how we do the configuration on the board dynamically, right? Only if it was that simple.</p>
+<p>The process of computation is not that straight forward for the majority of the workloads, we cannot possibly know what&rsquo;s the best way to schedule these reconfigurations during runtime without having the throughput drop. Most of these workloads are dynamic and dependent on the inputs and hence are never commonly constant-time.</p>
+<p>Let&rsquo;s say we are optimistic that we have two contiguous processes that need FPGA acceleration and don&rsquo;t have any dependency and all computation is constant-time. Realistically, how much can we benefit from reconfiguration during runtime for such workloads? I suspect not much because, we are precomputing the bitstreams and these are going to be fixed hardware (not parameterization) and I am sure there would still be a marginal boost in performance but why would an architect do this when they can deploy another FPGA at their disposal for the subsequent workload?</p>
+<p>In <a href="https://indico.cern.ch/event/78644/attachments/1059010/1510107/dyn_reconf.handouts.pdf">this</a>, they have discussed the possibility of having partial reconfigurability of the FPGA fabric. If this is possible, this would mean that we can leverage almost all the resources on the FPGA effectively while having the ability of have dynamic parts in the system. The problem would be that it would take extra time to compute partial configurations since the number of FPGA resources now is not known until the previous configurations happen and hence the bitstream generation cannot be performed in parallel.</p>
+<h3 id="tons-of-problems-with-having-runtime-reconfigurable-fpgas-what-might-be-the-solution">Tons of problems with having runtime reconfigurable FPGAs, what might be the solution?</h3>
+<p>The time taken by the EDA tool to perform heuristic analysis of routing and floorplan is the highest during the bitstream generation. If we can figure out, how we can potentially handle this, we can have runtime reconfiguration as a feasible solution.</p>
+<p>This <a href="https://ieeexplore.ieee.org/document/6387011">paper</a> discusses the ability to segment workloads down to &ldquo;epochs&rdquo; and hence have an interconnect that essentially performs dynamic reconfiguration for each epoch of computation. This solution aims to alleviate the large context switching overhead since the arbitration and reconfiguration is happening within the FPGA fabric.</p>
+<p>This <a href="https://arxiv.org/pdf/2202.08952">pre-print</a> discusses another unique approach to enable runtime reconfigurability by basing the reconfiguration parameters from the inputs.</p>
+<p>I would like to see if one can leverage the multi-FPGA fabric regions (SLRs) to split up computation and workloads and even have the ability of configure each SLR during runtime. There is some <a href="https://www.computer.org/csdl/journal/ca/2022/02/09868126/1G9WqOiQCnm">evidence</a> on being able to configure the IO for each SLR. This seems promising and the possibility to implement the idea of multi-workload on a single large FPGA across it&rsquo;s SLRs is looking realistic.</p>
+<h3 id="potential-problems-to-tackle">Potential problems to tackle</h3>
+<ul>
+<li>The design cycle will not be as straight-forward hence it would take more time to develop an effective system to run on the FPGA.</li>
+<li>There are concerns with side-channel attacks and memory leaks across SLR bridges. Although there are mechanisms to mitigate attacks, these might cause undesirable overheads.</li>
+<li>We might need to design intermediate blocks to hold and forward data to and from one SLR to another, this might be tricky as we have to be able to accomodate arbitrary data widths and be able to schedule them on time between SLRs.</li>
+</ul>
+<h3 id="so-in-the-future-we-will-have-dynamic-hardware-then">So, in the future we will have dynamic hardware then?</h3>
+<p>The advancements in computation has been exponentially trending up and I see the possibility of FPGAs playing a large role in laying the foundation for the next generation of computers that can dynamically reconfigure themselves. It would not be fair to not mention about LLMs in this case. Although I am not the biggest fan of the trend, I do understand the impact that LLMs have done. It would be safe to say that LLMs too will play a huge role in having smart, dynamic computation since regular heuristic algorithms just don&rsquo;t cut it. LLMs can be the little bot steering the computation on the FPGA. Intriguing times ahead!</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://skudlur.github.io">Suhas Kudlur Viswanath</a> 2020 &ndash; 2025 | <a href="https://github.com/skudlur">Github</a> | <a href="https://twitter.com/s_kudlur">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

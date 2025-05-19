@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why do I choose to use emacs? | skudlur</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/categories/">Categories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Why do I choose to use emacs?</span></h1>
+
+<h2 class="date">2024/06/21</h2>
+</div>
+
+<main>
+<h2 id="my-emacs-journey">My emacs Journey</h2>
+<p>I started using emacs on a whim(pun intended hehe). I was using neovim during all my internships and I wanted to experience what emacs had to offer. I remember sending a text on the HSP Mentor chat saying, <em>&ldquo;I think I will use emacs during the upcoming internship&rdquo;</em> and I was promptly challenged (and made fun off, a tad bit). There began the journey of using (imho) one of the best tools (not just a text editor).</p>
+<h2 id="how-did-i-get-started">How did I get started?</h2>
+<p>As you can imagine, coming from vim where all the keybindings are pretty easy and straightforward, emacs posed the challenge of learning the awkward keybindings. I tried to use the man page and the GNU emacs tutorial but it only go me so far. This <a href="https://youtube.com/playlist?list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&amp;feature=shared">playlist</a> from <strong>System Crafters</strong> made the onboarding to emacs a bit simpler.</p>
+<h3 id="okay-so-emacs-is-tough-to-get-started-with-what-can-you-do-to-learn-it-faster">Okay so, emacs is tough to get started with. What can you do to learn it faster?</h3>
+<p>In the process of figuring out emacs, there are things I wish I learned during this process to make using and customizing emacs a lot better. Here are the following:</p>
+<ul>
+<li>I wish I learned Emacs-Lisp early on. Emacs-Lisp is a dialect of Lisp (pretty much Lisp) and it is used by emacs for everything from configuration, customization and package managing. Learning this would make your emacs experience much better, much faster. Here is a reference to learn Emacs-Lisp -&gt; <a href="https://emacsdocs.org/docs/elisp/Emacs-Lisp">emacsdocs</a></li>
+<li>I wish I started out on Doom Emacs when I first started to learn emacs. Doom Emacs is a heavily riced version of GNU emacs with tons of very cool features all packaged up for you to plug-and-play. Another nice thing about Doom, is that it comes with evil-mode which lets you use vim bindings as you learn the emacs bindings on the side. Here is the repository to <a href="https://github.com/doomemacs/doomemacs">Doom Emacs</a> and another great emacs fork called <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>.</li>
+<li>I wish I explored org-mode much earlier. Org files, Org agenda and everything Org on emacs is wonderful and potent. You can use it for notes, documentation and tasks and it is integrated well within emacs. Check this video by <a href="https://www.youtube.com/watch?v=SzA2YODtgK4">thoughtbot</a> to get started with org-mode.</li>
+</ul>
+<h2 id="how-i-use-emacs">How I use emacs?</h2>
+<p>I run Doom Emacs (with a custom configuration ofcourse) but I also my own flavour emacs that I like to call <a href="https://github.com/skudlur/dotfiles/tree/main/skmacs">skmacs</a> that is (a bit) faster than Doom and has everything I need for my development work.</p>
+<p>Here are some of the things I do from emacs:</p>
+<ul>
+<li>I write Bluespec/SystemVerilog, Rust and Python code. Emacs using ELPA/MELPA which is a large package directory and manager. You can install packages that aid your development work very easily with a click of <code>M+x package-install</code>. I use packages like <code>bsv-mode</code> (Om Shanti to the legendary Arvind), <code>verilog-mode</code>, <code>sv-lint</code>, <code>rustic-mode</code> (no LSP) and <code>python-mode</code> (no LSP) for syntax-highlighting and formatting.</li>
+<li>I perform git actions using <code>magit</code> which a great package to use as it makes performing commits much faster.</li>
+<li>Additionally, I use org-agenda (<code>M+x org-agenda</code>) to maintain tasks for myself for the day and org-mode for documentation.</li>
+<li>I also use <code>pdf-tools</code> to view PDFs on emacs. It&rsquo;s just faster to do it on Emacs instead of switching over to a browser or a file explorer.</li>
+<li>Occasionally, I use terminal emulators within emacs to run shell scripts or makefiles.</li>
+<li>I also have keybinds to perform processes I run the most. For example -&gt; compile code, run makefiles, run simulations. You can create your own keybinds once you understand Emacs-Lisp well.</li>
+</ul>
+<h2 id="how-i-plan-to-use-emacs-in-the-coming-years">How I plan to use emacs in the coming years?</h2>
+<p>I will use emacs for latex and org documentation during my graduate program as I am quite comfortable using it now. If you like Obsidian, I am sure you will love org-mode even more (but that is given, you have learned to use emacs). I would like to explore the feature of using emacs as a standalone window manager (proper neckbeard stuff right here).</p>
+<h2 id="should-you-use-emacs">Should you use emacs?</h2>
+<p>The answer is not that simple as it depends on a few things. Do you like your text editor to be fast? Use Neovim. Do you not like customizing your text editor or having keybinds? Use VSC or Espresso or Sublime Text. I would suggest emacs to users that like to do a lot of things in one place. Vim can do a lot of things emacs can do, but emacs lets you do almost everything you can do on your computer WM or DE. The level of customization and control you get over this tool is immense and if you seek such features, you would benefit from emacs.</p>
+<p>Ending this meh blog with a quote from Tom Christiansen (Chad Perl user) - <em>&ldquo;Emacs is a nice operating system, but I prefer UNIX&rdquo;</em>. That should tell you a lot about what emacs actually is.</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://skudlur.github.io">Suhas Kudlur Viswanath</a> 2020 &ndash; 2025 | <a href="https://github.com/skudlur">Github</a> | <a href="https://twitter.com/s_kudlur">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

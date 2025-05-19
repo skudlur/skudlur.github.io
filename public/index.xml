@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on skudlur</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on skudlur</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 28 Jun 2024 12:00:00 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Our phones use us</title>
+      <link>http://localhost:1313/posts/our_phones_use_us/</link>
+      <pubDate>Fri, 28 Jun 2024 12:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/our_phones_use_us/</guid>
+      <description>Our phones At 22 years of age, I am not a very old person, or I think so to feel good. But, everyday I see how our phones have merged into our beings. Imagine someone wearing a suit, a nice Seiko watch, a grand leather briefcase and a shiny pair of Clarks asks to borrow your phone to make a call. That scenario is so unlikely that it will take a momemt or two to even realize that this dapper man, for some obscure reason, does not have a phone.</description>
+    </item>
+    <item>
+      <title>A primer on CPU design</title>
+      <link>http://localhost:1313/posts/primer_on_cpu_design/</link>
+      <pubDate>Tue, 25 Jun 2024 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/primer_on_cpu_design/</guid>
+      <description>CPU - The heart of a computer The design of a central processing unit (CPU) involves building and testing various complex micro-architectural modules. We will discuss on what it takes for an enthusiastic beginner to get into the art of designing modern-day CPUs.&#xA;Von-Neumann vs. Harvard Architectures Every computer comprises of the same primitive structures i.e. compute and memory. Compute refers to the modules that perform logical, arithmetic and other similar operations on data.</description>
+    </item>
+    <item>
+      <title>A future where dynamic hardware becomes a thing</title>
+      <link>http://localhost:1313/posts/rt_reconfig_fpga/</link>
+      <pubDate>Mon, 24 Jun 2024 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/rt_reconfig_fpga/</guid>
+      <description>FPGAs An FPGA (Field Programmable Gate Array) is a device that consists of logic elements (Look-Up Tables i.e. LUTs. Sometimes the logic elements are also referred to as Configurable Logic Block (CLB)), memory slices (i.e. BRAM) and DSP slices (Digital Signal Processor). The LUTs are all interconnected and they can be configured to behave like any logic gate. The BRAM and DSP slices are placed in-between these vastly interconnected LUTs. The &amp;ldquo;magic&amp;rdquo; of FPGA devices is that it can be configured to behave like any digital logic circuit.</description>
+    </item>
+    <item>
+      <title>Why do I choose to use emacs?</title>
+      <link>http://localhost:1313/posts/why_i_use_emacs/</link>
+      <pubDate>Fri, 21 Jun 2024 11:00:00 +0530</pubDate>
+      <guid>http://localhost:1313/posts/why_i_use_emacs/</guid>
+      <description>My emacs Journey I started using emacs on a whim(pun intended hehe). I was using neovim during all my internships and I wanted to experience what emacs had to offer. I remember sending a text on the HSP Mentor chat saying, &amp;ldquo;I think I will use emacs during the upcoming internship&amp;rdquo; and I was promptly challenged (and made fun off, a tad bit). There began the journey of using (imho) one of the best tools (not just a text editor).</description>
+    </item>
+    <item>
+      <title>My Running Journey</title>
+      <link>http://localhost:1313/posts/runners-journey/</link>
+      <pubDate>Fri, 05 Jan 2024 21:38:18 +0530</pubDate>
+      <guid>http://localhost:1313/posts/runners-journey/</guid>
+      <description>The start of my journey to become a runner (and a triathlete) I miss the days I used to run back in middle school for the spectrum of sports I played. Football, basketball, track, volleyball and throwball. Running back then was just to condition myself for the sport. I wanted to change that.&#xA;It was time to get back to fitness and although I did not play a sport to be conditioned for, I thought why don&amp;rsquo;t I run and try to become better at it.</description>
+    </item>
+    <item>
+      <title>Computer Architecture Mentorship program - Tilde 2.0</title>
+      <link>http://localhost:1313/posts/tilde-2.0/</link>
+      <pubDate>Fri, 19 May 2023 21:38:18 +0530</pubDate>
+      <guid>http://localhost:1313/posts/tilde-2.0/</guid>
+      <description>A short post on the mentorship program I have hosted through Hackerspace&amp;rsquo;s Homebrew Tilde 2.0 program </description>
+    </item>
+    <item>
+      <title>My Audiophile Journey</title>
+      <link>http://localhost:1313/posts/audiophile_journey/</link>
+      <pubDate>Fri, 19 May 2023 21:38:18 +0530</pubDate>
+      <guid>http://localhost:1313/posts/audiophile_journey/</guid>
+      <description>My obsession with expensive audio peripherals My love for music started back in school when I was introduced to playing the guitar by my dear friend Joyson Gilbert Paul. Music was one amongst the many cool things he introduced me to. I started out jamming to tracks ranging hip-hop to classic rock. I still cherish the moments I had in school; forming a band for the first time &amp;ldquo;One Peace&amp;rdquo; and playing rock in my Catholic school.</description>
+    </item>
+    <item>
+      <title>My talk at July&#39;s Rustaceans Meetup</title>
+      <link>http://localhost:1313/posts/july-rustaceans-meetup/</link>
+      <pubDate>Fri, 19 May 2023 21:38:18 +0530</pubDate>
+      <guid>http://localhost:1313/posts/july-rustaceans-meetup/</guid>
+      <description>I gave a talk titled &amp;ldquo;Building lightweight command-line tools with Rust&amp;rdquo; On July 8th, I gave a talk in the July Rustaceans Meetup hosted by Rust India where I showcased my RISC-V emulator named &amp;ldquo;RISCulator&amp;rdquo; which is built using Rust. It was a great day and bunch of awesome people sharing knowledge about Rust. I believe Rust will be a dominating programming language because of it&amp;rsquo;s community-driven nature and it shows great potential to be used in Electronic Design Automation and other VLSI use-cases.</description>
+    </item>
+    <item>
+      <title>Introduction</title>
+      <link>http://localhost:1313/posts/introduction/</link>
+      <pubDate>Fri, 19 May 2023 21:11:06 +0530</pubDate>
+      <guid>http://localhost:1313/posts/introduction/</guid>
+      <description>Welcome to my website! My name is Suhas Kudlur Viswanath and I am currently a senior-year student pursuing Electronics and Communication Engineering at PES University, Bangalore.</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>Hello there! My name is Suhas Kudlur Viswanath A Master&amp;rsquo;s By Research student at The School of Informatics, University of Edinburgh. Huawei Research Grant award winner. Database Systems Research Intern at Huawei Technologies R&amp;amp;D (UK) Ltd. A computer architecture geek. An amateur runner. Also, an avid spender on audio peripherals. Research Interests: Computer Architecture Electronic Design Automation Hardware-Software Co-Design Performance Modelling and Analysis Novel Memory Technologies Research Experience: Research Intern at ICE Labs, Columbia University Worked with Dr.</description>
+    </item>
+  </channel>
+</rss>
