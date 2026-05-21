@@ -10,8 +10,18 @@ title: Home
 
 ## _Living life, one bit at a time._
 
-I am a postgraduate (MSc by Research) student at the School of Informations, University of Edinburgh. I am intrigued by hardware and software architecture and how the development of these have evolved over the years and converged into the co-design realm for maximum performance. Besides my lab work, I strive to contribute to my own as well as other open source projects. I also guide undergraduate students interested in contributing to open source projects and research projects. 
+I am a CPU Researcher at Huawei Technologies R&D in Cambridge, UK, having recently graduated with an MSc by Research from the School of Informatics, University of Edinburgh. I am intrigued by hardware and software architecture, how they have evolved over the years, and how they converge into the co-design realm for maximum performance.
 
-If you are interested to work with me, hire me or would like to share your playlist - reach out to me on LinkedIn.
+Besides my daily research, I am a computer architecture geek who enjoys mentoring undergraduate students and exploring novel compute and memory architectures.
+
+I am open to new opportunities and collaborations, provided the work is intriguing, offbeat, or challenges the status quo (and holds up to scrutiny):
+
+    💼 Career Opportunities: Open to roles that tackle unconventional hardware/software co-design problems.
+
+    📝 Research & Publications: Looking to partner on novel, unique approaches to performance modeling and architecture.
+
+    💻 Open-source: Happy to contribute to projects that are doing something genuinely different.
+
+If you're working on something that breaks the norm, or just want to share your favorite audio gear and playlists—reach out to me on LinkedIn or via email!
 
 ### Recent Blogs
