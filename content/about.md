@@ -5,17 +5,17 @@ draft: false
 ---
 ## Hello there! My name is Suhas Kudlur Viswanath
 
-- A Master's By Research student at [The School of Informatics, University of Edinburgh](https://informatics.ed.ac.uk/).
-- Huawei Research Grant award winner.
-- Database Systems Research Intern at [Huawei Technologies R&D (UK) Ltd](https://www.linkedin.com/company/huawei-technologies-research-development-uk-ltd/?originalSubdomain=uk).
+- CPU Researcher at [Huawei Technologies R&D (UK) Ltd](https://www.linkedin.com/company/huawei-technologies-research-development-uk-ltd/?originalSubdomain=uk), Cambridge, United Kingdom. 
+- I graduated with a Master's By Research degree from the [The School of Informatics, University of Edinburgh](https://informatics.ed.ac.uk/). I was sponsored by a research grant by Isolation Labs (University of Edinburgh) and Huawei R&D, Edinburgh, Scotland.
+- Previously I was a Database Systems Research Intern at [Huawei Technologies R&D (UK) Ltd](https://www.linkedin.com/company/huawei-technologies-research-development-uk-ltd/?originalSubdomain=uk), Hardware Engineer at Arithmic Labs (Now known as Nasiko), SoC Design Intern at InCore Semiconductors.
 - A computer architecture geek.
-- An amateur runner.
 - Also, an avid spender on audio peripherals.
 
 ### Research Interests:
 
-- Computer Architecture
+- Novel Compute and Memory Architectures
 - Electronic Design Automation
+- Acceleration of software via hardware
 - Hardware-Software Co-Design
 - Performance Modelling and Analysis
 - Novel Memory Technologies
@@ -28,9 +28,5 @@ draft: false
     - Worked on Domain Optimized Manycore RISC-V Overlay project funded by the [Semiconductor Research Corporation](https://www.src.org/)
 - Edge AI Research Intern at [SandLogic](https://www.sandlogic.com/)
     - Worked on developing DNN accelerators on FPGA devices for better and efficient inference and training on edge devices.
-
-### Work Experience:
-
-- Hardware Engineer (May 2024 - December 2024) at [Arithmic](https:://arithmic.com/)
 - SoC Intern (Summer 2023) at [InCore Semiconductor](https://incoresemi.com/)
 - CPU Verification Intern (Summer 2022) at [InCore Semiconductor](https://incoresemi.com/)
