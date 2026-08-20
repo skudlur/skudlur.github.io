@@ -16,12 +16,21 @@ Besides my daily research, I am a computer architecture geek who enjoys mentorin
 
 I am open to new opportunities and collaborations, provided the work is intriguing, offbeat, or challenges the status quo (and holds up to scrutiny):
 
-    💼 Career Opportunities: Open to roles that tackle unconventional hardware/software co-design problems.
+📝 **Research & Publications**: Looking to partner on novel, unique approaches to performance modeling and architecture.
 
-    📝 Research & Publications: Looking to partner on novel, unique approaches to performance modeling and architecture.
-
-    💻 Open-source: Happy to contribute to projects that are doing something genuinely different.
+💻 **Open-source**: Happy to contribute to projects that are doing something offbeat and interesting.
 
 If you're working on something that breaks the norm, or just want to share your favorite audio gear and playlists—reach out to me on LinkedIn or via email!
+
+### News
+
+- **09/2026** — Joining Callosum as a Member of Technical Staff with the Accelerator Team in London
+- **08/2026** — MICRO 2026 - Artifact Evaluation Committee
+- **03/2026** — Joined Huawei R&D as a Senior CPU Researcher with Kirin CPU team in Cambridge
+- **12/2025** — Submitted MScR Thesis in University of Edinburgh
+- **04/2025** — Joined Huawei R&D as a Database Systems Research Intern with the GaussDB team in Edinburgh
+- **01/2025** — Started Master's of Science by Research at the School of Informatics, University of Edinburgh
+- **05/2024** — Joined Arithmic Labs (now Nasiko) as a Hardware Engineer in Bengaluru
+- **04/2023** — Joined InCore Semiconductors as an SoC Design Intern in Bengaluru
 
 ### Recent Blogs
