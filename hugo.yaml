@@ -19,9 +19,12 @@ menu:
     - name: About
       url: "about/"
       weight: 2
+    - name: Papers
+      url: "papers/"
+      weight: 3
     - name: Tags
       url: "tags/"
-      weight: 3
+      weight: 4
 
 params:
   description: "skudlur's personal website."
