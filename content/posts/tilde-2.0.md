@@ -1,7 +1,7 @@
 ---
 title: "Computer Architecture Mentorship program - Tilde 2.0"
 date: 2023-05-19T21:38:18+05:30
-draft: false
+draft: true
 tags:
   - announcement
   - blog

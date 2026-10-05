@@ -1,6 +1,6 @@
 ---
 title: "My talk at July's Rustaceans Meetup"
-date: 2023-05-19T21:38:18+05:30
+date: 2023-07-08T18:00:00+05:30
 draft: false
 tags:
   - announcement
