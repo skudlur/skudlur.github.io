@@ -7,10 +7,6 @@ disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
 
-permalinks:
-  note: "/note/:year/:month/:day/:slug/"
-  post: "/post/:year/:month/:day/:slug/"
-
 menu:
   main:
     - name: Home
@@ -19,6 +15,9 @@ menu:
     - name: About
       url: "about/"
       weight: 2
+    - name: Papers
+      url: "papers/"
+      weight: 3
     - name: Tags
       url: "tags/"
       weight: 4
@@ -45,3 +44,8 @@ markup:
           inline:
           - - \(
             - \)
+
+# Org-mode posts: Hugo >= 0.158 blocks text/org content by default.
+security:
+  allowContent:
+    - '! ^text/html$'
