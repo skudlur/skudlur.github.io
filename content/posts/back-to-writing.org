@@ -1,0 +1,38 @@
+#+title: Back to writing, one bit at a time
+#+date: 2026-10-28
+#+draft: false
+#+tags[]: blog announcement
+#+description: One small post every weekday on memory, CPUs, interconnects and the things I build.
+
+It has been more than two years since I last wrote anything here. The last
+post went up in June 2024. A lot has happened since (the [[/about/][About]] page has
+the summary), and somewhere in there I stopped writing in public. I want to fix
+that.
+
+So here is the plan: *one small post every weekday*. Small means a few hundred
+words and one idea, a paper or a bit of news. Sometimes it will be just one plot
+or one surprising number. I started out writing long blogs but I think that led
+me to burn out. This time around, the objective is to write smaller, yet
+meaningful thoughts, measurements, reports on some of my open-source work and
+things that interest me.
+
+What I'll write about:
+
+- *Memory.* Caches, TLBs, DRAM and the odd things it does, measured on hardware
+  I own.
+- *CPUs.* Mostly build logs from [[https://github.com/skudlur/diablo][diablo]], my out-of-order RISC-V core, which
+  I am rewriting in Bluespec.
+- *Interconnects.* Be it CXL or chip interconnects like TileLink and AXI. I've
+  been poking at CXL with [[https://github.com/skudlur/TraceCXL][TraceCXL]].
+- *Things I build.* A few repositories that have been sitting private will go
+  public over the next few weeks, and each one deserves a write-up.
+
+A few rules for myself:
+
+1. Every number comes with the machine, compiler and command that produced it,
+   so you can rerun it.
+2. If I'm unsure about something, I'll say so.
+3. I will try and keep the blogs as concise as I can (with the occasional
+   rambling or longer reporting on something truly intriguing).
+
+Next up: the memory wall, the elephant in the room.
