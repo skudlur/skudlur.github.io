@@ -53,11 +53,11 @@ shared when both sides want it? My hypotheses are:
 2. Shared on demand: the memory system arbitrates between CPU and GPU requests
    as they arrive. Many SoCs work this way, but I don't know what Apple does.
 
-My bet is static configuration. I couldn't find anything public from Apple
-that settles it, so in a follow-up post I'll measure it. If the
-split is static, the CPU alone should stall around 92 GB/s (30% of 307), busy
-GPU or not. If it is shared on demand, the CPU alone should go higher, then
-drop once the GPU starts streaming.
+My bet is static configuration, though I couldn't find anything public from
+Apple that settles it. The two are easy to tell apart: if the split is static,
+the CPU alone should stall around 92 GB/s (30% of 307), busy GPU or not. If it
+is shared on demand, the CPU alone should go higher, then drop once the GPU
+starts streaming.
 
 Truly unifying memory for different compute elements is a challenging feat, and
 what Apple and NVIDIA are doing is the latest step towards easing an obvious
