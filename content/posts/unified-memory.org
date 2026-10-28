@@ -1,0 +1,66 @@
+#+title: Unite the Memory!
+#+date: 2026-10-28
+#+draft: false
+#+tags[]: memory blog
+#+description: Three different things vendors call "unified memory", and why none of them removes the memory wall.
+
+Unified memory is not new. The PlayStation 4 shipped in 2013 with "8 GB of
+unified system memory" shared by its CPU and GPU ([[https://www.engadget.com/2013-02-20-sony-further-details-playstation-4-hardware-specs.html][Sony's specs]]), and integrated
+GPUs have borrowed system DRAM for decades. What is new is the scale: bigger
+pools, much higher bandwidth, and CPUs and GPUs that work on the same data
+without copying it around. For workloads that move and process a lot of data in
+parallel, this is almost a no-brainer. However, when different vendors say
+"unified memory", they can mean unifying very different things.
+
+Unified memory, based on which vendor you ask, can mean one of three things,
+broadly speaking:
+
+1. *One physical pool.* As seen in Apple's M-series chips: one DRAM pool shared
+   by the CPU and the GPU.
+2. *One address space over separate pools.* As seen in [[https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/unified-memory.html][CUDA Unified Memory]] on a
+   discrete NVIDIA GPU. The same pointer works on both sides, but pages still
+   migrate over PCIe when the other side touches them.
+3. *One coherent pool.* As seen in NVIDIA's DGX Spark, which NVIDIA describes as
+   a "CPU+GPU-coherent memory model" ([[https://nvidianews.nvidia.com/news/nvidia-announces-dgx-spark-and-dgx-station-personal-ai-computers][press release]]). Like the Apple chips, the CPU and GPU
+   share one pool. If you know CXL, this is a bit like a Type 2 device: an
+   accelerator whose memory the CPU can access coherently.
+
+#+caption: Three things called "unified memory". Vendor figures from Apple's and NVIDIA's spec pages, read 2026-10-28.
+[[file:/images/unified-memory/unified-memory-three-kinds.svg]]
+
+Unifying memory the way Apple has does not mean the GPU gets all of it. On an M5 Pro
+MacBook Pro (24 GB, macOS 27.0.1), Metal reports =hasUnifiedMemory= as
+true, yet =recommendedMaxWorkingSetSize= is 17.76 GiB, or 74% of RAM. Apple
+describes that value as "an approximation of how much memory, in bytes, this
+GPU device can allocate without affecting its runtime performance" ([[https://developer.apple.com/documentation/metal/mtldevice/recommendedmaxworkingsetsize][docs]]), so it
+is a guideline rather than a hard cap. You can check yours with a few lines of
+Swift (=xcrun swiftc -O q.swift -o q && ./q=):
+
+#+begin_src swift
+import Metal
+let d = MTLCreateSystemDefaultDevice()!
+print("hasUnifiedMemory:", d.hasUnifiedMemory)
+print("recommendedMaxWorkingSetSize GiB:", Double(d.recommendedMaxWorkingSetSize)/1073741824)
+#+end_src
+
+That is capacity, though. Unification removes expensive copies between pools,
+but the DRAM bandwidth limit remains, and now the CPU and GPU draw on it at the
+same time. So how does one pool of 307 GB/s (Apple's figure for the M5 Pro) get
+shared when both sides want it? My hypotheses are:
+
+1. Statically split: say the CPU gets 30% and the GPU 70%, fixed in hardware or
+   firmware.
+2. Shared on demand: the memory system arbitrates between CPU and GPU requests
+   as they arrive. Many SoCs work this way, but I don't know what Apple does.
+
+My bet is static configuration. I couldn't find anything public from Apple
+that settles it, so in a follow-up post I'll measure it. If the
+split is static, the CPU alone should stall around 92 GB/s (30% of 307), busy
+GPU or not. If it is shared on demand, the CPU alone should go higher, then
+drop once the GPU starts streaming.
+
+Truly unifying memory for different compute elements is a challenging feat, and
+what Apple and NVIDIA are doing is the latest step towards easing an obvious
+bottleneck: the memory wall. It also makes big shared-memory machines more
+accessible, given that you can buy them for reasonable prices (maybe in a few
+years they will be "dirt cheap" on eBay. A boy can only dream.)

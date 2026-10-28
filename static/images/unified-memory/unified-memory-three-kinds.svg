@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="440" viewBox="0 0 1020 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <style>
+      .title { font-size: 17px; font-weight: bold; fill: #111; }
+      .sub   { font-size: 13px; fill: #555; font-style: italic; }
+      .blk   { fill: #ffffff; stroke: #222; stroke-width: 1.5; }
+      .cpu   { fill: #dbe8f6; stroke: #2b5c8a; stroke-width: 1.5; }
+      .gpu   { fill: #e3f1df; stroke: #3d7a34; stroke-width: 1.5; }
+      .mem   { fill: #f6e7cf; stroke: #9a6a1c; stroke-width: 1.5; }
+      .lbl   { font-size: 14px; fill: #111; text-anchor: middle; }
+      .small { font-size: 12px; fill: #444; text-anchor: middle; }
+      .note  { font-size: 12px; fill: #333; }
+      .line  { stroke: #444; stroke-width: 1.5; fill: none; }
+      .dash  { stroke: #777; stroke-width: 1.2; stroke-dasharray: 5 4; fill: none; }
+    </style>
+  </defs>
+  <rect width="1020" height="440" fill="#ffffff"/>
+
+  <!-- Panel 1: Apple -->
+  <g transform="translate(20,20)">
+    <text x="0" y="18" class="title">1. Apple unified memory</text>
+    <text x="0" y="38" class="sub">one physical pool</text>
+    <rect x="10" y="58" width="290" height="250" rx="8" class="dash"/>
+    <text x="22" y="76" class="note">SoC package</text>
+    <rect x="30" y="90"  width="75" height="50" rx="4" class="cpu"/><text x="67"  y="120" class="lbl">CPU</text>
+    <rect x="118" y="90" width="75" height="50" rx="4" class="gpu"/><text x="155" y="120" class="lbl">GPU</text>
+    <rect x="206" y="90" width="75" height="50" rx="4" class="blk"/><text x="243" y="113" class="lbl">other</text><text x="243" y="129" class="small">engines</text>
+    <path d="M67,140 V170 M155,140 V170 M243,140 V170" class="line"/>
+    <rect x="30" y="170" width="251" height="30" rx="4" class="blk"/><text x="155" y="190" class="lbl">shared memory system</text>
+    <path d="M155,200 V230" class="line"/>
+    <rect x="30" y="230" width="251" height="60" rx="4" class="mem"/>
+    <text x="155" y="256" class="lbl">DRAM: one pool</text>
+    <text x="155" y="276" class="small">same bytes for CPU and GPU</text>
+    <text x="10" y="336" class="note">No copy to "GPU memory": there is none.</text>
+    <text x="10" y="354" class="note">Metal still has GPU-only (private) buffers.</text>
+    <text x="10" y="372" class="note">M5 Pro: 307 GB/s shared (Apple spec)</text>
+  </g>
+
+  <!-- Panel 2: CUDA UM on a discrete GPU -->
+  <g transform="translate(355,20)">
+    <text x="0" y="18" class="title">2. CUDA Unified Memory</text>
+    <text x="0" y="38" class="sub">one address space, two pools (discrete GPU)</text>
+    <rect x="10" y="58" width="290" height="40" rx="6" class="dash"/>
+    <text x="155" y="83" class="lbl">one virtual address space</text>
+    <rect x="25"  y="115" width="110" height="50" rx="4" class="cpu"/><text x="80"  y="145" class="lbl">CPU</text>
+    <rect x="175" y="115" width="110" height="50" rx="4" class="gpu"/><text x="230" y="145" class="lbl">GPU</text>
+    <path d="M80,165 V230 M230,165 V230" class="line"/>
+    <rect x="25"  y="230" width="110" height="60" rx="4" class="mem"/><text x="80"  y="256" class="lbl">system</text><text x="80" y="274" class="small">DRAM</text>
+    <rect x="175" y="230" width="110" height="60" rx="4" class="mem"/><text x="230" y="256" class="lbl">GPU</text><text x="230" y="274" class="small">memory</text>
+    <path d="M140,252 H170" class="line" marker-start="url(#ah)" marker-end="url(#ah)"/>
+    <text x="155" y="196" class="small">pages migrate</text>
+    <text x="155" y="211" class="small">on fault (PCIe)</text>
+    <text x="10" y="336" class="note">Same pointer works on both sides.</text>
+    <text x="10" y="354" class="note">The bytes still cross PCIe; the driver</text>
+    <text x="10" y="372" class="note">does the copy for you.</text>
+  </g>
+
+  <!-- Panel 3: coherent CPU+GPU -->
+  <g transform="translate(690,20)">
+    <text x="0" y="18" class="title">3. Coherent CPU + GPU</text>
+    <text x="0" y="38" class="sub">one pool, kept coherent in hardware</text>
+    <rect x="10" y="58" width="290" height="250" rx="8" class="dash"/>
+    <text x="22" y="76" class="note">e.g. NVIDIA GB10 (DGX Spark)</text>
+    <rect x="30"  y="90" width="100" height="50" rx="4" class="cpu"/><text x="80"  y="120" class="lbl">CPU</text>
+    <rect x="180" y="90" width="100" height="50" rx="4" class="gpu"/><text x="230" y="120" class="lbl">GPU</text>
+    <path d="M134,115 H176" class="line" marker-start="url(#ah)" marker-end="url(#ah)"/>
+    <text x="155" y="160" class="small">coherent link</text>
+    <text x="155" y="175" class="small">(NVLink-C2C)</text>
+    <path d="M80,140 V198 M230,140 V198 M80,198 H230 M155,198 V230" class="line"/>
+    <rect x="30" y="230" width="250" height="60" rx="4" class="mem"/>
+    <text x="155" y="256" class="lbl">LPDDR5x: one pool</text>
+    <text x="155" y="276" class="small">128 GB (NVIDIA spec)</text>
+    <text x="10" y="336" class="note">"CPU+GPU-coherent memory model"</text>
+    <text x="10" y="354" class="note">(NVIDIA's words).</text>
+    <text x="10" y="372" class="note">273 GB/s shared (NVIDIA spec)</text>
+  </g>
+
+  <line x1="20" y1="398" x2="1000" y2="398" stroke="#ccc"/>
+  <text x="510" y="424" font-size="14" fill="#111" text-anchor="middle">In 1 and 3, CPU and GPU share one DRAM and its bandwidth: unifying removes copies, not the memory wall.</text>
+</svg>
